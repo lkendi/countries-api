@@ -15,7 +15,6 @@ MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD")
 MYSQL_DATABASE = os.getenv("MYSQL_DATABASE")
 
 DATABASE_URL = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DATABASE}"
-print(DATABASE_URL)
 
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SESSION_LOCAL = sessionmaker(autocommit=False, autoflush=False, bind=engine)
